@@ -1,0 +1,83 @@
+.blinking-trigger {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  color: #FFD700; /* Gold Color */
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  border-top: 2px solid #FFD700;
+  z-index: 1000;
+}
+
+.blink-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.sub-trigger { font-size: 0.9rem; margin: 5px 0 0; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 2000;
+}
+
+.investor-modal {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 30px;
+  border: 1px solid #FFD700;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.confidential-tag {
+  color: #FFD700;
+  font-size: 1.1rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.investor-form input, .investor-form select {
+  width: 100%; padding: 10px; margin: 10px 0;
+  background: #333; border: 1px solid #444; color: #fff;
+}
+
+.gold-submit {
+  background: #FFD700; color: #000; font-weight: bold;
+  width: 100%; padding: 12px; border: none; cursor: pointer;
+} .virtual-keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  margin-top: 15px;
+  background: #222;
+  padding: 10px;
+  border: 1px solid #FFD700;
+  border-radius: 5px;
+}
+
+.virtual-keyboard button {
+  padding: 10px;
+  background: #333;
+  color: #FFD700;
+  border: 1px solid #444;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.virtual-keyboard button:hover {
+  background: #FFD700;
+  color: #000;
+}

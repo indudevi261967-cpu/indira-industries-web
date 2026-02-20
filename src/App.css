@@ -1,0 +1,49 @@
+/* इंदिरा इंडस्ट्रीज मास्टर स्टाइल */
+.App {
+  text-align: center;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+.main-frame {
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  
+  /* 4x मोटा रॉयल गोल्डन बॉर्डर */
+  border: 10px double;
+  border-image: linear-gradient(45deg, #B8860B, #D4AF37, #FFD700, #D4AF37, #B8860B) 1;
+}
+
+/* रियल गोल्ड ग्रेडिएंट टेक्स्ट के लिए */
+.gold-gradient-text {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* प्रीमियम गोल्ड बटन */
+.cta-button {
+  background: linear-gradient(45deg, #B8860B, #D4AF37, #FFD700);
+  color: #000;
+  border: none;
+  padding: 18px 50px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
