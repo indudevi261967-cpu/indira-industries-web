@@ -33,54 +33,6 @@ function App() {
       <img src="/page4.jpg" alt="IINDPURE" style={{ width: '100%', display: 'block' }} />
       <img src="/page5.jpg" alt="Contact" style={{ width: '100%', display: 'block' }} />
     </div>
-      ) : (
-        <div className="main-frame" style={{ padding: '20px' }}>
-          <h2 style={{ color: '#D4AF37' }}>IINDLUBE MASTER DIRECTORY</h2>
-          
-          <div className="search-box" style={{ marginBottom: '20px' }}>
-            <input 
-              type="text" 
-              placeholder="Search by Grade (e.g. 40, 68, Gear)..." 
-              style={{ padding: '10px', width: '100%', borderRadius: '5px', border: '1px solid #D4AF37', background: '#111', color: '#fff' }}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-
-          <div style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
-            <button onClick={() => setFilter('All')} style={{ background: filter === 'All' ? '#D4AF37' : '#222', padding: '5px 15px', color: '#fff', border: 'none', cursor: 'pointer' }}>All</button>
-            <button onClick={() => setFilter('Auto')} style={{ background: filter === 'Auto' ? '#D4AF37' : '#222', padding: '5px 15px', color: '#fff', border: 'none', cursor: 'pointer' }}>Automotive</button>
-            <button onClick={() => setFilter('Ind')} style={{ background: filter === 'Ind' ? '#D4AF37' : '#222', padding: '5px 15px', color: '#fff', border: 'none', cursor: 'pointer' }}>Industrial</button>
-          </div>
-
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ borderBottom: '2px solid #D4AF37', color: '#D4AF37' }}>
-                <th style={{ padding: '10px' }}>Product Name</th>
-                <th style={{ padding: '10px' }}>Grades</th>
-                <th style={{ padding: '10px' }}>Application</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredProducts.map(p => (
-                <tr key={p.id} style={{ borderBottom: '1px solid #333' }}>
-                  <td style={{ padding: '10px' }}>{p.name}</td>
-                  <td style={{ padding: '10px', color: '#FFD700' }}>{p.grade}</td>
-                  <td style={{ padding: '10px', fontSize: '0.8rem' }}>{p.use}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <div style={{ marginTop: '30px', border: '1px dashed #D4AF37', padding: '15px', textAlign: 'center' }}>
-            <p>Don't see your specific grade? <strong>We formulate custom solutions.</strong></p>
-            <p style={{ color: '#D4AF37' }}>Contact for TDS/MSDS: indira.industries@example.com</p>
-          </div>
-
-          <button className="cta-button" style={{ marginTop: '20px' }} onClick={() => setPage(1)}>BACK TO HOME</button>
-        </div>
-      )}
-    </div>
-  );
+);
 }
-
 export default App;
