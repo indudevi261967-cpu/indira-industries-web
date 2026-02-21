@@ -25,16 +25,14 @@ function App() {
     (p.name.toLowerCase().includes(search.toLowerCase()) || p.grade.toLowerCase().includes(search.toLowerCase()))
   );
 
-  return (
-    <div className="App" style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff' }}>
-      {page === 1 ? (
-        <div className="main-frame" style={{ textAlign: 'center', padding: '50px' }}>
-          <img src="/Welcome.png" alt="Welcome" style={{ width: '350px', borderRadius: '10px' }} onError={(e) => e.target.style.display='none'} />
-          <div style={{ margin: '30px 0' }}>
-            <img src="/logo.png" alt="Indira Industries" style={{ width: '300px' }} />
-          </div>
-          <button className="cta-button" onClick={() => setPage(2)}>EXPLORE DIVISIONS</button>
-        </div>
+  return (<div className="App" style={{ backgroundColor: '#fff' }}>
+      {/* Aaj ki nayi 5 pages ki design */}
+      <img src="/page1.jpg" alt="Home" style={{ width: '100%', display: 'block' }} />
+      <img src="/page2.jpg" alt="IINDLUBE" style={{ width: '100%', display: 'block' }} />
+      <img src="/page3.jpg" alt="IINDSTYL" style={{ width: '100%', display: 'block' }} />
+      <img src="/page4.jpg" alt="IINDPURE" style={{ width: '100%', display: 'block' }} />
+      <img src="/page5.jpg" alt="Contact" style={{ width: '100%', display: 'block' }} />
+    </div>
       ) : (
         <div className="main-frame" style={{ padding: '20px' }}>
           <h2 style={{ color: '#D4AF37' }}>IINDLUBE MASTER DIRECTORY</h2>
