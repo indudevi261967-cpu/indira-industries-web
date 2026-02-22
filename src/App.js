@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './App.css';
 
 function App() {
-  // स्क्रॉलिंग के लिए रेफरेन्स (References)
+  // Scrolling References
   const page1Ref = useRef(null);
   const page2Ref = useRef(null);
   const page3Ref = useRef(null);
@@ -51,13 +51,12 @@ function App() {
       {/* PAGE 5: INVESTOR ZONE / FORM */}
       <div ref={page5Ref} style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
         <img src="/page5.jpg" alt="Contact Us" style={{ width: '100%' }} />
-        {/* Main Investor Zone Button to Google Form */}
-        <a 
-          href={googleFormLink} 
-          target="_blank" 
-          rel="noreferrer"
+        {/* Main Investor Zone Button to Google Form - FIXED FOR VERCEL */}
+        <div 
+          onClick={() => window.open(googleFormLink, "_blank", "noreferrer")}
           style={{ position: 'absolute', top: '56%', left: '9%', width: '82%', height: '30%', cursor: 'pointer', display: 'block' }}
-        ></a>
+          title="Open Investor Form"
+        ></div>
       </div>
 
     </div>
