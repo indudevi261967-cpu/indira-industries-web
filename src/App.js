@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import './App.css';
-import Catalog from './Catalog'; // यहाँ कैटलॉग को इंपोर्ट किया गया है
+import Catalog from './Catalog';
 
 function App() {
   // Scrolling References
@@ -30,18 +30,22 @@ function App() {
       </div>
 
       {/* PAGE 2: DIVISIONS */}
-      <div ref={page2Ref} style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
-        <img src="/page2.jpg" alt="Divisions" style={{ width: '100%' }} />
-        {/* All "Details" and "Angel Partner" buttons go to Page 5 Form */}
-        <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '5%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-        <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '38%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-        <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '70%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-        <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '78%', left: '30%', width: '50%', height: '15%', cursor: 'pointer' }}></div>
+      <div ref={page2Ref} style={{ width: '100%' }}>
         
-        {/* --- नया IINDLUBE स्मार्ट कैटलॉग यहाँ जोड़ा गया है --- */}
+        {/* फोटो और बटन्स का सुरक्षित डिब्बा */}
+        <div style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
+          <img src="/page2.jpg" alt="Divisions" style={{ width: '100%' }} />
+          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '5%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
+          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '38%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
+          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '70%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
+          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '78%', left: '30%', width: '50%', height: '15%', cursor: 'pointer' }}></div>
+        </div>
+
+        {/* --- IINDLUBE स्मार्ट कैटलॉग --- */}
         <div style={{ lineHeight: 'normal' }}>
           <Catalog />
         </div>
+        
       </div>
 
       {/* PAGE 3: LOCATION */}
@@ -57,7 +61,7 @@ function App() {
       {/* PAGE 5: INVESTOR ZONE / FORM */}
       <div ref={page5Ref} style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
         <img src="/page5.jpg" alt="Contact Us" style={{ width: '100%' }} />
-        {/* Main Investor Zone Button to Google Form - FIXED FOR VERCEL */}
+        {/* Main Investor Zone Button to Google Form */}
         <div 
           onClick={() => window.open(googleFormLink, "_blank", "noreferrer")}
           style={{ position: 'absolute', top: '56%', left: '9%', width: '82%', height: '30%', cursor: 'pointer', display: 'block' }}
