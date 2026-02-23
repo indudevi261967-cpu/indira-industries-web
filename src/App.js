@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './App.css';
+import Catalog from './Catalog'; // यहाँ कैटलॉग को इंपोर्ट किया गया है
 
 function App() {
   // Scrolling References
@@ -36,6 +37,11 @@ function App() {
         <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '38%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
         <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '70%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
         <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '78%', left: '30%', width: '50%', height: '15%', cursor: 'pointer' }}></div>
+        
+        {/* --- नया IINDLUBE स्मार्ट कैटलॉग यहाँ जोड़ा गया है --- */}
+        <div style={{ lineHeight: 'normal' }}>
+          <Catalog />
+        </div>
       </div>
 
       {/* PAGE 3: LOCATION */}
