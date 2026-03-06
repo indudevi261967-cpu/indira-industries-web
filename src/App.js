@@ -1,76 +1,20 @@
-import React, { useRef } from 'react';
-import './App.css';
-import Catalog from './Catalog';
+import React from 'react';
 
-function App() {
-  // Scrolling References
-  const page1Ref = useRef(null);
-  const page2Ref = useRef(null);
-  const page3Ref = useRef(null);
-  const page4Ref = useRef(null);
-  const page5Ref = useRef(null);
-
-  const scrollToPage = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const googleFormLink = "https://forms.gle/ToFuJVGzX96CETzr6";
-
+export default function App() {
   return (
-    <div className="App" style={{ backgroundColor: '#000', margin: 0, padding: 0 }}>
+    <div style={{ backgroundColor: '#050510', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
       
-      {/* PAGE 1: HOME */}
-      <div ref={page1Ref} style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
-        <img src="/page1.jpg" alt="Home" style={{ width: '100%' }} />
-        {/* Navigation Buttons Overlays */}
-        <div onClick={() => scrollToPage(page2Ref)} style={{ position: 'absolute', top: '45%', left: '33%', width: '33%', height: '15%', cursor: 'pointer', background: 'transparent' }} title="Go to Page 2"></div>
-        <div onClick={() => scrollToPage(page3Ref)} style={{ position: 'absolute', top: '72%', left: '4%', width: '15%', height: '22%', cursor: 'pointer', background: 'transparent' }} title="Go to Page 3"></div>
-        <div onClick={() => scrollToPage(page4Ref)} style={{ position: 'absolute', top: '72%', left: '42%', width: '15%', height: '22%', cursor: 'pointer', background: 'transparent' }} title="Go to Page 4"></div>
-        <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '72%', left: '80%', width: '15%', height: '22%', cursor: 'pointer', background: 'transparent' }} title="Go to Page 5"></div>
-      </div>
-
-      {/* PAGE 2: DIVISIONS */}
-      <div ref={page2Ref} style={{ width: '100%' }}>
-        
-        {/* फोटो और बटन्स का सुरक्षित डिब्बा */}
-        <div style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
-          <img src="/page2.jpg" alt="Divisions" style={{ width: '100%' }} />
-          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '5%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '38%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '68%', left: '70%', width: '25%', height: '8%', cursor: 'pointer' }}></div>
-          <div onClick={() => scrollToPage(page5Ref)} style={{ position: 'absolute', top: '78%', left: '30%', width: '50%', height: '15%', cursor: 'pointer' }}></div>
-        </div>
-
-        {/* --- IINDLUBE स्मार्ट कैटलॉग --- */}
-        <div style={{ lineHeight: 'normal' }}>
-          <Catalog />
-        </div>
-        
-      </div>
-
-      {/* PAGE 3: LOCATION */}
-      <div ref={page3Ref} style={{ width: '100%', lineHeight: 0 }}>
-        <img src="/page3.jpg" alt="Location" style={{ width: '100%' }} />
-      </div>
-
-      {/* PAGE 4: EMAIL */}
-      <div ref={page4Ref} style={{ width: '100%', lineHeight: 0 }}>
-        <img src="/page4.jpg" alt="Email" style={{ width: '100%' }} />
-      </div>
-
-      {/* PAGE 5: INVESTOR ZONE / FORM */}
-      <div ref={page5Ref} style={{ position: 'relative', width: '100%', lineHeight: 0 }}>
-        <img src="/page5.jpg" alt="Contact Us" style={{ width: '100%' }} />
-        {/* Main Investor Zone Button to Google Form */}
-        <div 
-          onClick={() => window.open(googleFormLink, "_blank", "noreferrer")}
-          style={{ position: 'absolute', top: '56%', left: '9%', width: '82%', height: '30%', cursor: 'pointer', display: 'block' }}
-          title="Open Investor Form"
-        ></div>
+      {/* Canva Embed Code */}
+      <div style={{ position: 'relative', width: '100%', maxWidth: '1200px', height: '0', paddingTop: '56.25%', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', overflow: 'hidden', borderRadius: '12px' }}>
+        <iframe 
+          loading="lazy" 
+          style={{ position: 'absolute', width: '100%', height: '100%', top: '0', left: '0', border: 'none', padding: '0', margin: '0' }} 
+          src="https://www.canva.com/design/DAHB32zUFyU/uuskrnWpjVcWBAgUTcLL3w/view?embed" 
+          allowFullScreen="allowfullscreen" 
+          allow="fullscreen">
+        </iframe>
       </div>
 
     </div>
   );
 }
-
-export default App;
