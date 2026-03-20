@@ -1,24 +1,12 @@
 import React, { useState } from 'react';
 import './InvestorPortal.css';
 
-// 1. यह है वर्चुअल कीबोर्ड का हिस्सा (नया निर्देश)
-const VirtualKeyboard = ({ onKeyClick }) => {
-  const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Clear'];
-  return (
-    <div className="virtual-keyboard">
-      {keys.map(key => (
-        <button key={key} type="button" onClick={() => onKeyClick(key)}>{key}</button>
-      ))}
-    </div>
-  );
-};
-
 const InvestorPortal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeInput, setActiveInput] = useState(null); // यह याद रखेगा कि आप कहाँ टाइप कर रहे हैं
 
   return (
     <div className="investor-wrapper">
+      {/* 1. ट्रिगर बटन जो फॉर्म को खोलेगा */}
       {!isOpen && (
         <div className="blinking-trigger" onClick={() => setIsOpen(true)}>
           <div className="blink-text">Join us as an Angel Investor</div>
@@ -26,37 +14,39 @@ const InvestorPortal = () => {
         </div>
       )}
 
+      {/* 2. पॉप-अप मोडल जिसमें आपका Google Form है */}
       {isOpen && (
-        <div className="modal-overlay">
-          <div className="investor-modal">
-            <button className="close-btn" onClick={() => setIsOpen(false)}>×</button>
-            <h2 className="confidential-tag">We respect your privacy, so this communication will be always confidential</h2>
+        <div className="modal-overlay" style={{ overflowY: 'auto', padding: '20px 10px' }}>
+          <div className="investor-modal" style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
+            
+            {/* क्लोज (X) बटन */}
+            <button 
+              className="close-btn" 
+              onClick={() => setIsOpen(false)}
+              style={{ position: 'absolute', top: '5px', right: '15px', fontSize: '28px', background: 'transparent', border: 'none', cursor: 'pointer', color: '#555', zIndex: 10 }}
+            >
+              ×
+            </button>
 
-            <form className="investor-form">
-              {/* सभी इनपुट फील्ड्स */}
-              <input type="text" placeholder="Full Name" onFocus={() => setActiveInput('name')} />
-              <input type="text" placeholder="Location" onFocus={() => setActiveInput('location')} />
-              
-              <label>Investment Capabilities:</label>
-              <select>
-                <option>1.0 L – 5.0 L</option>
-                <option>5.0 L to 10.0 L</option>
-                <option>10.0 L to 20.0 L</option>
-                <option>20.0 L to 50.0 L</option>
-                <option>Above</option>
-              </select>
+            <h2 className="confidential-tag" style={{ textAlign: 'center', marginBottom: '20px', paddingRight: '30px' }}>
+              We respect your privacy, so this communication will be always confidential
+            </h2>
 
-              <div className="lock-section">
-                <label>Create your 4-digit Lock Code:</label>
-                <input type="password" placeholder="xxxx" maxLength="4" onFocus={() => setActiveInput('lock')} />
-              </div>
+            {/* IINDLUBE Investor Google Form Iframe */}
+            <div style={{ width: '100%', borderRadius: '8px', overflow: 'hidden', backgroundColor: '#fff' }}>
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeueWR0rLUi27Ek6U6KfQfKEqfw63GH76Wt950t78U1kNmQCA/viewform?embedded=true" 
+                width="100%" 
+                height="3181" 
+                frameBorder="0" 
+                marginHeight="0" 
+                marginWidth="0"
+                title="IINDLUBE Investor Form"
+              >
+                Loading…
+              </iframe>
+            </div>
 
-              {/* 2. यहाँ कीबोर्ड दिखाई देगा */}
-              <p style={{fontSize: '10px', color: '#FFD700', marginTop: '10px'}}>Secure Virtual Keyboard:</p>
-              <VirtualKeyboard onKeyClick={(key) => console.log("Key pressed:", key)} />
-
-              <button type="submit" className="gold-submit">Submit Confidentially</button>
-            </form>
           </div>
         </div>
       )}
