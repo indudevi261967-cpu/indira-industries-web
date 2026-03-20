@@ -6,7 +6,7 @@ const InvestorPortal = () => {
   return (
     <div style={{ position: 'fixed', bottom: '30px', right: '30px', zIndex: 99999 }}>
       
-      {/* 1. ब्लिंकिंग ट्रिगर बटन (The Floating Gold Button) */}
+      {/* 1. Floating Gold Trigger Button */}
       {!isOpen && (
         <div 
           onClick={() => setIsOpen(true)}
@@ -19,7 +19,7 @@ const InvestorPortal = () => {
             textAlign: 'center',
             maxWidth: '280px',
             border: '2px solid #fff',
-            animation: 'pulse 2s infinite' // यह इसे चमकाएगा
+            animation: 'pulse 2s infinite'
           }}
         >
           <div style={{ color: '#000', fontWeight: 'bold', fontSize: '16px', marginBottom: '5px' }}>
@@ -28,64 +28,59 @@ const InvestorPortal = () => {
           <p style={{ color: '#333', fontSize: '12px', margin: 0, lineHeight: '1.2' }}>
             Click for flexible investment options & handsome ROI
           </p>
-          
-          {/* ब्लिंकिंग के लिए छोटा सा स्टाइल टैग (Inline) */}
-          <style>
-            {`
-              @keyframes pulse {
-                0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-                70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
-                100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-              }
-            `}
-          </style>
+          <style>{`@keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.05); } 100% { transform: scale(1); } }`}</style>
         </div>
       )}
 
-      {/* 2. पॉप-अप मॉडल (The Confidential Form) */}
+      {/* 2. Enhanced Modal Overlay */}
       {isOpen && (
         <div style={{
-          position: 'fixed',
-          top: 0, left: 0, width: '100%', height: '100%',
-          backgroundColor: 'rgba(0,0,0,0.9)',
-          display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
-          zIndex: 100000, overflowY: 'auto', padding: '20px'
+          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+          backgroundColor: 'rgba(0,0,0,0.95)',
+          display: 'flex', justifyContent: 'center', alignItems: 'center',
+          zIndex: 100000, padding: '20px'
         }}>
           <div style={{ 
-            backgroundColor: '#fff', width: '100%', maxWidth: '900px', 
-            borderRadius: '15px', position: 'relative', marginTop: '20px' 
+            backgroundColor: '#fff', width: '100%', maxWidth: '800px', 
+            borderRadius: '20px', position: 'relative', padding: '40px 20px',
+            textAlign: 'center', boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
           }}>
             
-            {/* क्लोज बटन (X) */}
             <button 
               onClick={() => setIsOpen(false)}
-              style={{
-                position: 'absolute', top: '10px', right: '20px',
-                fontSize: '35px', background: 'none', border: 'none',
-                cursor: 'pointer', color: '#000', zIndex: 100001
-              }}
+              style={{ position: 'absolute', top: '15px', right: '20px', fontSize: '30px', border: 'none', background: 'none', cursor: 'pointer' }}
             >
               &times;
             </button>
 
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-               <h2 style={{ color: '#2c3e50', fontSize: '20px', marginBottom: '10px' }}>
-                 We respect your privacy, this communication is strictly confidential.
-               </h2>
-            </div>
+            <h2 style={{ color: '#1a1a1a', marginBottom: '10px' }}>IINDLUBE Investor Gateway</h2>
+            <p style={{ color: '#666', marginBottom: '25px' }}>We respect your privacy. All communications are strictly confidential.</p>
 
-            {/* Google Form Iframe */}
-            <div style={{ width: '100%', height: '80vh', overflow: 'hidden' }}>
-              <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSeueWR0rLUi27Ek6U6KfQfKEqfw63GH76Wt950t78U1kNmQCA/viewform?embedded=true" 
-                width="100%" 
-                height="3181" 
-                frameBorder="0" 
-                title="IINDLUBE Investor Form"
-              >
-                Loading…
-              </iframe>
-            </div>
+            {/* Direct Action Button - This will never fail */}
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeueWR0rLUi27Ek6U6KfQfKEqfw63GH76Wt950t78U1kNmQCA/viewform" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#2c3e50',
+                color: '#fff',
+                padding: '15px 35px',
+                borderRadius: '10px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '18px',
+                boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+                marginBottom: '20px'
+              }}
+            >
+              Fill Investor Enquiry Form →
+            </a>
+
+            <p style={{ fontSize: '12px', color: '#999' }}>
+              The form will open in a new secure tab for your convenience.
+            </p>
+
           </div>
         </div>
       )}
